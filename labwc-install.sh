@@ -1,6 +1,5 @@
 #!/bin/bash
 # Labwc Installer for Debian 13
-
 set -e
 
 # --- 0. Helper Functions ---
@@ -42,10 +41,9 @@ sudo apt install -y curl wget apt-transport-https ca-certificates lsb-release
 echo ">> Configuring APT sources to USTC Mirror..."
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo tee /etc/apt/sources.list << 'EOF'
-deb https://mirrors.ustc.edu.cn/debian/ trixie main contrib non-free non-free-firmware
-deb https://mirrors.ustc.edu.cn/debian/ trixie-updates main contrib non-free non-free-firmware
-deb https://mirrors.ustc.edu.cn/debian-security trixie-security main contrib non-free non-free-firmware
-EOF
+deb https://mirrors.ustc.edu.cn/debian/ trixie main
+deb https://mirrors.ustc.edu.cn/debian/ trixie-updates main
+deb https://mirrors.ustc.edu.cn/debian-security trixie-security main
 
 echo ">> Updating package lists..."
 sudo apt update
@@ -53,7 +51,7 @@ sudo apt update
 # 3.5 Ensure System is Up-to-Date
 #     Standard procedure to ensure base system matches the new sources.
 echo ">> upgrading system packages..."
-sudo apt full-upgrade -y
+sudo apt upgrade -y
 
 # 4. Install Labwc and full dependencies
 #    - Added 'firmware-linux' (drivers)

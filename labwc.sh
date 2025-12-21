@@ -20,7 +20,7 @@ sudo apt update
 
 # --- Installation ---
 
-sudo apt install -y labwc waybar foot fuzzel thunar swaybg polkit-1 lxpolkit mako brightnessctl pavucontrol qt6-wayland xdg-desktop-portal-wlr xwayland \
+sudo apt install -y labwc waybar foot fuzzel thunar swaybg lxpolkit brightnessctl pavucontrol qt6-wayland xdg-desktop-portal-wlr xwayland \
 grim slurp wl-clipboard swaylock cliphist network-manager-gnome \
 fonts-noto-cjk fonts-font-awesome fcitx5 fcitx5-chinese-addons fcitx5-configtool \
 libnotify-bin curl wget git gammastep \
@@ -44,8 +44,6 @@ dbus-update-activation-environment --systemd --all
 swaybg -i ~/Pictures/wallpaper.jpg -m fill &
 
 fcitx5 -d &
-
-mako &
 
 waybar &
 
